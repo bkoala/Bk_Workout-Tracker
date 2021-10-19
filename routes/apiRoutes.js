@@ -1,7 +1,18 @@
 const router = require("express").Router();
-const db = require("../../models");
+const db = require("../models");
 const mongoose = require('mongoose');
 
+
+//HTML ROUTES
+// Exercises
+router.get("/exercise", (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/exercise.html'))
+});
+
+//stats
+router.get("/stats", (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/stats.html'))
+});
 
 
 // GET ROUTE FOR RENDERING ALL WORKOUTS, SHOWING TOTAL DURATION OF EXERCISES
