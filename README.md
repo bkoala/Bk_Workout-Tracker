@@ -1,9 +1,11 @@
 # Bk_Workout-Tracker
-For this assignment, you'll create a workout tracker. You have already been provided with the front end code in the `Develop` folder. This assignment will require you to create Mongo database with a Mongoose schema and handle routes with Express.
+
+This application is a workout tracker that allows a user to create, and track his daily excersices.  The application was implemented using Mongoose schement and uses routes with Express.
 
 ## User Story
 
-* As a user, I want to be able to view create and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
+The application allows the user to view create and track daily workouts. He is able to log multiple exercises in a workout on a given day. He is also be able to track the name, type, weight, sets, reps, and duration of exercise. For exercises that are cardio exercise, the user is able to track his distance traveled.
 
-Install the required dependices to your cloned directory in command-line using: npm install
+
+## Homepage 
 
