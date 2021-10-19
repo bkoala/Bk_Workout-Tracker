@@ -15,21 +15,15 @@ app.use(logger("dev"));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-//app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static("public"));
 app.use('/',apiRoutes);
 app.use('/',htmlRoutes);
 
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
-db.Workout.create({ Day: Date.now() })
-  .then(dbWorkout => {
-  //  console.log(dbWorkout);
-  })
-  .catch(({message}) => {
-    console.log(message);
-  });
+
 
   
  /* 

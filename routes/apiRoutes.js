@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 // GET ROUTE FOR RENDERING ALL WORKOUTS, SHOWING TOTAL DURATION OF EXERCISES
 router.get("/api/workouts", (req, res) => {
     // Use aggregate to sum up duration of all exercises for each workout
-    // and set the sum to a new field called totalDuration for each workout
+    // and add sum to totalDuration 
     db.Workout.aggregate( [
       {
         $addFields: {
