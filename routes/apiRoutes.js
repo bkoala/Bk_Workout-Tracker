@@ -70,6 +70,7 @@ db.Workout.create(req.body)
 
 // PUT ROUTE FOR UPDATING A WORKOUT WITH NEW EXERCISES (or Use findOneAndUpdate)
 router.put("/api/workouts/:id", ( req, res) => {
+
     // Find a workout document by id and add the new exercise to the array of exercises
     db.Workout.findOneAndUpdate({ _id: req.params.id }, { $push: { exercises: req.body } })
       .then(dbWorkout => {
