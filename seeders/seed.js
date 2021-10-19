@@ -1,11 +1,25 @@
 const mongoose = require('mongoose');
 const db = require('../models');
 
-mongoose.connect('mongodb://localhost/workout', {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true,
-});
+const connectDb = async () => {
+  await mongoose.connect(
+    process.env.MONGODB_URI || 'mongodb://localhost/workout',
+    {
+      useNewUrlParser:true,
+      useCreateIndex:true,
+      useFindAndModify:false,
+      useUnifiedTopology: true 
+    }
+  )
+  .then(() => {
+    console.log("Connected to database!")
+  })
+  .catch(() => {
+    console.log(err)
+  })
+}
+// Connect to the database
+connectDb().catch(err => console.log(err))
 
 const workoutSeed = [
   {
