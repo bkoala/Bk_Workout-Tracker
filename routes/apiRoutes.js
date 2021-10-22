@@ -45,7 +45,7 @@ router.get("/api/workouts/range", (req, res) => {
         $addFields: { totalDuration: { $sum: "$exercises.duration" } }
       },
     ])
-    // Descending order - newest workouts to oldest
+    // Order ascending
     .sort({ day: -1 })
     .then(workouts => {
       // create a copy of workouts, capturing most recent 7 workouts
