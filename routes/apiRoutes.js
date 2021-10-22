@@ -16,10 +16,10 @@ router.get("/stats", (req, res) => {
 });
 
 
-// GET ROUTE FOR RENDERING ALL WORKOUTS, SHOWING TOTAL DURATION OF EXERCISES
+// GET route for rendering all workouts and show the total duration of excerices.
 router.get("/api/workouts", (req, res) => {
     // Use aggregate to sum up duration of all exercises for each workout
-    // and add sum to totalDuration 
+    // and Add sum to totalDuration 
     db.Workout.aggregate( [
       {
         $addFields: {
